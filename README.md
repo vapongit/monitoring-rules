@@ -19,7 +19,7 @@ Initial rule definintion is parsed using expressions grammar, validated for usin
 Example:
 - input rule: `trx.amount < 30*100`
 - optimized AST:
-```json
+```javascript
 {
     type: 'BinaryExpression',
     operator: '<',
@@ -45,7 +45,7 @@ We can calculate rule value easely using stored AST and current scope
 Example 1:
 - input rule: `trx.amount + 100`
 - optimized AST:
-```json
+```javascript
 {
     type: 'BinaryExpression',
     operator: '+',
@@ -62,7 +62,7 @@ Example 1:
 }
 ```
 - scope:
-```json
+```javascript
 {
     trx: {
       type: 'bank-incoming',
@@ -78,7 +78,7 @@ Example 1:
 Example 2 (generate SQL statement to query database):
 - input: `sum(past.amount,past.currency="EUR","INTERVAL 1 WEEK")`
 - ast:
-```json
+```javascript
 {
     type: 'CallExpression',
     callee: { type: 'Identifier', name: 'sum', weight: 1 },
@@ -97,7 +97,7 @@ SELECT SUM(t.amount) FROM transactions AS t WHERE t.identity_id=:identityId AND 
 # Examples
 
 - Playground: `./src/index.js`
-- Usage: `node ./src/index.js 'trx.amount>1 ? "write your expression" : "Say bye bye"`
+- Usage: `node `./src/index.js 'trx.amount>1 ? "write your expression" : "Say bye bye"'`
 
 
 # Pros and cons
