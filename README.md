@@ -8,7 +8,7 @@ Rule is a usual expression written in some human readable form. In this project 
 - `and` and `or` are aliases for `&&` and `or`
 - you can't use increment and decrement operators
 
-Example rule: sepa incoming transaction with amount less then 5 eur and overall turnover of previous sepa incomings gretaer 1 EUR
+Example rule: sepa incoming transaction with amount less then 5 EUR and overall turnover of previous sepa incomings gretaer 1 EUR
 
 ```sql
 trx.label="sepa-incoming" AND trx.amount<500 AND trx.currency="EUR" AND sum(past.amount,past.currency=trx.currency AND past.label=trx.label)>100
