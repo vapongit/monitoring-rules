@@ -2,7 +2,7 @@
 
 MVP for rules representaion, storing and calculation
 
-# Representaion
+# Representation
 
 Rule is a usual expression written in some human readable form. In this project expressions use javascript expressions syntax with some limitations:
 - `and` and `or` are aliases for `&&` and `or`
@@ -97,7 +97,7 @@ SELECT SUM(t.amount) FROM transactions AS t WHERE t.identity_id=:identityId AND 
 # Examples
 
 - Playground: `./src/index.js`
-- Usage: `node `./src/index.js 'trx.amount>1 ? "write your expression" : "Say bye bye"'`
+- Usage: `node ./src/index.js 'trx.amount>1 ? "write your expression" : "Say bye bye"'`
 
 
 # Pros and cons
